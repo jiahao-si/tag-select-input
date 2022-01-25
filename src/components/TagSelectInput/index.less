@@ -1,0 +1,94 @@
+.tag-select-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: rgb(255, 255, 255);
+
+  // padding: 4px 0px;
+  &:hover {
+    border: 1px solid #ee4d2d;
+  }
+  &.focus {
+    border: 1px solid #ee4d2d;
+  }
+
+  .disabled {
+    width: 100%;
+    height: 100%;
+    min-height: 32px;
+    background: rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 5px 12px 3px 12px;
+    color: rgba(0, 0, 0, 0.25);
+  }
+  .selected-tag {
+    color: #2673dd;
+    font-style: normal;
+    // 支持 tag 可选 TODO: 当tag 在最后时，只能选中后面的
+    user-select: all;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .selected-tag-dropdown {
+    cursor: pointer;
+    align-self: flex-start;
+    border-radius: 2px;
+    width: 28px;
+    height: 28px;
+    margin: 1px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .input-area {
+    max-width: 100%;
+    width: 100%;
+    display: inline-block;
+    padding: 1px 10px;
+    overflow: auto;
+    &:hover {
+      border: none;
+      outline: none;
+    }
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+
+  .input-area:empty::before {
+    content: attr(placeholder);
+    font-size: 14px;
+    color: #ccc;
+    line-height: 21px;
+    padding-top: 20px;
+  }
+
+  .input-area:focus-visible {
+    outline: none;
+  }
+
+  [contenteditable='plaintext-only'].single-line {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  [contenteditable='plaintext-only'].single-line br {
+    display: none;
+  }
+  [contenteditable='plaintext-only'].single-line * {
+    display: inline;
+    white-space: nowrap;
+  }
+
+  .ant-dropdown-trigger:hover {
+    background: #e8e8e8;
+  }
+}
